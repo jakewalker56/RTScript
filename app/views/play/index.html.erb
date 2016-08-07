@@ -1,0 +1,72 @@
+<html>
+<head>
+
+<script type="text/javascript" src="constants.js"></script>
+<script type="text/javascript" src="resource.js"></script>
+<script type="text/javascript" src="unit.js"></script>
+<script type="text/javascript" src="line.js"></script>
+<script type="text/javascript" src="explosion.js"></script>
+<script type="text/javascript" src="warbase.js"></script>
+<script type="text/javascript" src="resource_description.js"></script>
+<script type="text/javascript" src="action_description.js"></script>
+<script type="text/javascript" src="unit_description.js"></script>
+<script type="text/javascript" src="warbase_description.js"></script>
+
+<script type="text/javascript" src="warplan.js"></script>
+
+<script type="text/javascript" src="warrior1.js"></script>
+<script type="text/javascript" src="warrior2.js"></script>
+
+<script type="text/javascript" src="war.js"></script>
+
+</head>
+<body>
+	<div class="col-md-12 no-pad">
+        <div id="scoreboard" class="col-md-2 no-pad-right">
+            <div id="scoreboard-score1">
+                <table id="scoreboard-score1-table" class="table table-condensed">
+                    <tr>
+                        <td colspan='2'><p style="color: red">Enemy Team</p></td>
+                    </tr>
+                    <tr>
+                        <td id="scoreboard-score1-table-units"></td>
+                        <td id="scoreboard-score1-table-base"></td>
+                    </tr>
+                    <tr>
+                        <td id="scoreboard-score1-table-money"></td>
+                        <td id="scoreboard-score1-table-energy"></td>
+                    </tr>
+                    <tr>
+                        <td colspan='2'><p style="color: blue">Your Team</p></td>
+                    </tr>
+                    <tr>
+                        <td id="scoreboard-score2-table-units"></td>
+                        <td id="scoreboard-score2-table-base"></td>
+                    </tr>
+                    <tr>
+                        <td id="scoreboard-score2-table-money"></td>
+                        <td id="scoreboard-score2-table-energy"></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <p>Time: <span id="game-timer">
+                </span></p>
+            </div>
+        </div>
+        <div class="col-md-10 no-pad-left">
+            <canvas id="board" style="border: 0px solid gray"></canvas>
+        </div>
+    </div>
+    
+    <div class="col-md-2">
+        <%= render 'gamenav'%>
+    </div>
+    <div class="col-md-10 no-pad">
+        <%= text_area(:script, :content, rows: 20, style: "width:100%")%>
+    </div>
+<script>
+	runWar();
+</script>
+</body>
+</html>
